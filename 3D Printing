@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    for(int i=1;i<=t;i++){
+        int a1,a2,a3,b1,b2,b3,c1,c2,c3,d1,d2,d3;
+        int min_a,min_b,min_c,min_d,sum;
+        cin>>a1>>b1>>c1>>d1;//taking input
+        cin>>a2>>b2>>c2>>d2;
+        cin>>a3>>b3>>c3>>d3;
+        
+        min_a=min(a1,min(a2,a3));//finding minimum
+        min_b=min(b1,min(b2,b3));
+        min_c=min(c1,min(c2,c3));
+        min_d=min(d1,min(d2,d3));
+        
+        sum=min_a+min_b+min_c+min_d;//summation of minimum
+        
+        if(sum<1000000)//appling condition
+        cout<<"Case"<<" "<<"#"<<i<<":"<<" "<<"IMPOSSIBLE"<<endl;
+        else{
+            if(min_a>=1000000)
+            cout<<"Case"<<" "<<"#"<<i<<":"<<" "<<1000000<<" "<<0<<" "<<0<<" "<<0<<endl;
+            else if(min_a+min_b>=1000000)
+            cout<<"Case"<<" "<<"#"<<i<<":"<<" "<<min_a<<" "<<1000000-min_a<<" "<<0<<" "<<0<<endl;
+            else if(min_a+min_b+min_c>=1000000)
+            cout<<"Case"<<" "<<"#"<<i<<":"<<" "<<min_a<<" "<<min_b<<" "<<1000000-min_a-min_b<<" "<<0<<endl;
+            else
+            cout<<"Case"<<" "<<"#"<<i<<":"<<" "<<min_a<<" "<<min_b<<" "<<min_c<<" "
+            <<1000000-min_a-min_b-min_c<<endl;
+        }
+    }
+    return 0;
+}
+//Vivek Kumar Purbey's-Code.
