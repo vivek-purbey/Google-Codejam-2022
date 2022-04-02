@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t_c;
+    cin>>t_c;//for test case
+    for(int t=1;t<=t_c;t++){
+        int num;
+        cin>>num;//size of array
+        int a[num], var=0, count=0;
+        for(int i=0;i<num;i++){
+            cin>>a[i];//elements of array
+        }
+        sort(a,a+num);//sort array
+        for(int i=0;i<num;i++){
+            if(a[i]>var){//given condition
+                var++;
+                count++;
+            }
+        }
+        cout<<"Case"<<" "<<"#"<<t<<":"<<" "<<count<<endl;//final output
+    }
+    return 0;
+}
+//Vivek Kumar Purbey's-Code.
